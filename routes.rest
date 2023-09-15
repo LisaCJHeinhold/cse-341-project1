@@ -1,0 +1,19 @@
+//********************
+//LOCAL
+//********************
+
+//get all contacts
+POST http://localhost:3000/contacts
+
+//get a contact by id
+POST http://localhost:3000/contacts/6503cfdb8730a0d0ee1e3d33
+
+//*******************
+//RENDER
+//*******************
+
+//get all contacts
+POST https://cse-341-project1.onrender.com/contacts
+
+//get a contact by id
+POST https://cse-341-project1.onrender.com/contacts/6503cfdb8730a0d0ee1e3d33
