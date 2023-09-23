@@ -1,11 +1,12 @@
-//import express
+//imports
 const express = require('express');
-const app = express();
-//import database.js
+const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
+const app = express();
 //set up the port environment
 const port = process.env.PORT || 3000;
 //sets up the routes/endpoints to be used by the api
+app.use(bodyParser.json());
 app.use('/', require('./routes'));
 //initialize database and starts server, or throws an error
 mongodb.initDb((err) => {
