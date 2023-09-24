@@ -7,6 +7,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 //sets up the routes/endpoints to be used by the api
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Z-Key');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+});
 app.use('/', require('./routes'));
 //initialize database and starts server, or throws an error
 mongodb.initDb((err) => {
